@@ -7,11 +7,12 @@ class Program
     {
         var path = "C:\\Users\\markell\\Desktop\\Тестовое B-1336\\Задание2\\Devices.json";
         using (StreamReader sr = new StreamReader(path))
-        {
+        {            
             var text = sr.ReadToEnd();
-            var result = JsonConvert.DeserializeObject<List<DeviceInfo>>(text).FindData();
+            var result = JsonConvert.DeserializeObject<List<DeviceInfo>>(text).FindData().ToConflicts();
 
-            var newData = JsonConvert.SerializeObject<Conflict>(result);
-        }
+            var newData = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText("C:\\Users\\markell\\Desktop\\Тестовое B-1336\\Задание2\\Device.json", newData);
+        }        
     }
 }
