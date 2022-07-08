@@ -12,7 +12,7 @@ class Program
             var result = JsonConvert.DeserializeObject<List<DeviceInfo>>(text).FindData().ToConflicts();
 
             var newData = JsonConvert.SerializeObject(result, Formatting.Indented);
-            File.WriteAllText("C:\\Users\\markell\\Desktop\\Тестовое B-1336\\Задание2\\Device.json", newData);
+            File.WriteAllText("C:\\Users\\markell\\Desktop\\Тестовое B-1336\\Задание2\\Conflicts.json", newData);
         }        
     }
 }
